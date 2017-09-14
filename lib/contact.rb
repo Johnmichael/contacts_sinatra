@@ -2,7 +2,7 @@ class Contact
 
   @@list = []
 
-  attr_accessor :first_name, :last_name, :phone_number, :email
+  attr_accessor :first_name, :last_name, :phone_number, :email, :address
   attr_reader :id
 
   def initialize(my_hash)
@@ -11,6 +11,7 @@ class Contact
     @phone_number = my_hash["phone_number"]
     @email = my_hash["email"]
     @id = @@list.length + 1
+    @address = []
   end
 
   def self.all()
@@ -41,4 +42,23 @@ class Contact
       end
     end
   end
+
+  def self.address(id, street, zipcode, state)
+    @@list.map do |contact|
+      if contact.id == id
+        contact.address = [street, zipcode, state]
+      end
+    end
+  end
+
+  def self.update(id, first, last, phone, email)
+    @@list.map do |contact|
+      if contact.id == id
+        contact.first_name = first
+        contact.last_name = last
+        contact.phone_number = phone
+        contact.email = email
+      end
+    end
+  end      
 end

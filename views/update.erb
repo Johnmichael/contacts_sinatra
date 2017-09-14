@@ -1,0 +1,28 @@
+<div class="card" style="background-color: #333; border-color: #333;">
+  <div class="card-block">
+    <h2><%= @contact.first_name %>
+      <%= @contact.last_name %></h2>
+    <h2>phone: <a href="tel:<%= @contact.phone_number %>"><%= @contact.phone_number %> </a></h2>
+    <h2>
+      e-mail: <a href="mailto:<%= @contact.email %>"><%= @contact.email %></a>
+    </h2>
+  </div>
+</div>
+
+<h2><%= @contact.address.join(',     ') %></h2>
+
+<h2>Update a Contact</h2>
+<form class="" action="/update/<%= @contact.id %>" method="post">
+  <label>First Name</label>
+  <input type="text" name="first_name" value="">
+  <label>Last Name</label>
+  <input type="text" name="last_name" value="">
+  <label>Phone Number</label>
+  <input type="text" name="phone_number" value="">
+  <label>E-mail</label>
+  <input type="text" name="email" value="">
+  <button class="button" type="submit" name="button">Confirm</button>
+</form>
+<form class="button" action="/" method="get">
+  <button type="submit" name="button">Home</button>
+</form>

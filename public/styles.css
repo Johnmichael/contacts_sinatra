@@ -1,0 +1,11 @@
+.button{
+  margin: 10px;
+}
+
+.card{
+  padding: 5px;
+  margin-top: 15px;
+  color: linen;
+  min-width: 400px;
+  max-width: 400px;
+}

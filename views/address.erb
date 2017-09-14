@@ -9,19 +9,22 @@
   </div>
 </div>
 
-<h2><%= @contact.address.join(',     ') %></h2>
-<div class="row">
-  <form class="button" action="/<%=@contact.id%>" method="post">
-    <button type="submit" name="button">Delete</button>
+  <h2><%= @contact.address.join(',     ') %></h2>
+
+
+  <form class="" action="/address/<%= @contact.id %>" method="post">
+    <label for="street">Street</label>
+    <input type="text" name="street">
+
+    <label for="zip">Zipcode</label>
+    <input type="text" name="zipcode" value="">
+
+    <label for="state">State</label>
+    <input type="text" name="state" value="">
+
+    <button type="submit">Confirm</button>
   </form>
-  <form class="button" action="/address/<%=@contact.id%>" method="get">
-    <button type="submit" name="button">Add Address</button>
-  </form>
+
   <form class="button" action="/" method="get">
     <button type="submit" name="button">Home</button>
   </form>
-  <form class="button" action="/update/<%=@contact.id%>" method="get">
-    <button type="submit" name="button">Update</button>
-  </form>
-
-</div>
