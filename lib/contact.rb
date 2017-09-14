@@ -30,4 +30,15 @@ class Contact
       end
     end
   end
+
+  def self.remove(id)
+    @@list.map do |contact|
+      if contact.id == id
+        contact.first_name = ""
+        contact.last_name = ""
+        contact.phone_number = ""
+        contact.email = ""
+      end
+    end
+  end
 end

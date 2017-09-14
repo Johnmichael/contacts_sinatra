@@ -22,10 +22,20 @@ post('/') do
   contact.save
 
   @list = Contact.all
+
   erb(:input)
 end
 
 get('/:id') do
   @contact = Contact.search(params[:id])
+
+  erb(:contact_detail)
+
+end
+
+post('/:id') do
+  @contact = Contact.search(params[:id])
+  Contact.remove(@contact.id)
+  redirect '/'
   erb(:contact_detail)
 end
